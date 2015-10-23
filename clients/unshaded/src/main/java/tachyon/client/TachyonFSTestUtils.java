@@ -25,9 +25,8 @@ import tachyon.client.file.TachyonFile;
 import tachyon.client.file.TachyonFileSystem;
 import tachyon.client.file.options.InStreamOptions;
 import tachyon.client.file.options.OutStreamOptions;
-import tachyon.conf.TachyonConf;
-import tachyon.exception.TachyonException;
 import tachyon.exception.ExceptionMessage;
+import tachyon.exception.TachyonException;
 import tachyon.thrift.FileInfo;
 
 public final class TachyonFSTestUtils {
@@ -44,7 +43,7 @@ public final class TachyonFSTestUtils {
   public static TachyonFile createByteFile(TachyonFileSystem tfs, String fileName, int len,
       OutStreamOptions options) throws IOException {
     return createByteFile(tfs, fileName, options.getTachyonStorageType(),
-        options.getUnderStorageType(), len, options.getBlockSize());
+        options.getUnderStorageType(), len, options.getBlockSizeBytes());
   }
 
   /**
@@ -116,7 +115,7 @@ public final class TachyonFSTestUtils {
       OutStreamOptions options =
           new OutStreamOptions.Builder(ClientContext.getConf())
               .setTachyonStorageType(tachyonStorageType).setUnderStorageType(underStorageType)
-              .setBlockSize(blockCapacityByte).build();
+              .setBlockSizeBytes(blockCapacityByte).build();
       FileOutStream os = tfs.getOutStream(new TachyonURI(fileName), options);
 
       for (int k = 0; k < len; k ++) {

@@ -106,6 +106,9 @@ public final class Constants {
   public static final String UNDERFS_GLUSTERFS_MOUNTS = "tachyon.underfs.glusterfs.mounts";
   public static final String UNDERFS_GLUSTERFS_MR_DIR =
       "tachyon.underfs.glusterfs.mapred.system.dir";
+  public static final String UNDERFS_S3_PROXY_HOST = "tachyon.underfs.s3.proxy.host";
+  public static final String UNDERFS_S3_PROXY_PORT = "tachyon.underfs.s3.proxy.port";
+  public static final String UNDERFS_S3_PROXY_HTTPS_ONLY = "tachyon.underfs.s3.proxy.https.only";
   public static final String ZOOKEEPER_ENABLED = "tachyon.zookeeper.enabled";
   public static final String ZOOKEEPER_ADDRESS = "tachyon.zookeeper.address";
   public static final String ZOOKEEPER_ELECTION_PATH = "tachyon.zookeeper.election.path";
@@ -113,17 +116,26 @@ public final class Constants {
   public static final String MAX_TABLE_METADATA_BYTE = "tachyon.max.table.metadata.bytes";
   public static final String METRICS_CONF_FILE = "tachyon.metrics.conf.file";
   public static final String FORMAT_FILE_PREFIX = "_format_";
+
+  public static final String INTEGRATION_MASTER_RESOURCE_CPU =
+      "tachyon.integration.master.resource.cpu";
+  public static final String INTEGRATION_MASTER_RESOURCE_MEM =
+      "tachyon.integration.master.resource.mem";
   public static final String INTEGRATION_MESOS_EXECUTOR_DEPENDENCY_PATH =
       "tachyon.integration.mesos.executor.dependency.path";
+  public static final String INTEGRATION_MESOS_JRE_PATH =
+      "tachyon.integration.mesos.jre.path";
   public static final String INTEGRATION_MESOS_JRE_URL = "tachyon.integration.mesos.jre.url";
-  public static final String INTEGRATION_MESOS_JRE_VERSION =
-      "tachyon.integration.mesos.jre.version";
   public static final String INTEGRATION_MESOS_TACHYON_MASTER_NAME =
       "tachyon.integration.mesos.master.name";
   public static final String INTEGRATION_MESOS_TACHYON_WORKER_NAME =
       "tachyon.integration.mesos.worker.name";
   public static final String INTEGRATION_MESOS_TACHYON_MASTER_NODE_COUNT =
       "tachyon.integration.mesos.master.node.count";
+  public static final String INTEGRATION_WORKER_RESOURCE_CPU =
+      "tachyon.integration.worker.resource.cpu";
+  public static final String INTEGRATION_WORKER_RESOURCE_MEM =
+      "tachyon.integration.worker.resource.mem";
 
   public static final String MASTER_FORMAT_FILE_PREFIX = "tachyon.master.format.file_prefix";
   public static final String MASTER_JOURNAL_FOLDER = "tachyon.master.journal.folder";
@@ -135,6 +147,11 @@ public final class Constants {
       "tachyon.master.journal.tailer.sleep.time.ms";
   public static final String MASTER_JOURNAL_LOG_SIZE_BYTES_MAX =
       "tachyon.master.journal.log.size.bytes.max";
+
+  public static final String JOURNAL_JSON_ENTRY_PARAMETER_KEY = "mParameters";
+  public static final String JOURNAL_JSON_ENTRY_TYPE_KEY = "mType";
+  public static final String JOURNAL_JSON_ENTRY_SEQUENCE_NUMBER_KEY = "mSequenceNumber";
+
   public static final String MASTER_HOSTNAME = "tachyon.master.hostname";
   public static final String MASTER_BIND_HOST = "tachyon.master.bind.host";
   public static final String MASTER_PORT = "tachyon.master.port";
@@ -152,9 +169,6 @@ public final class Constants {
   public static final String MASTER_KEYTAB_KEY = "tachyon.master.keytab.file";
   public static final String MASTER_PRINCIPAL_KEY = "tachyon.master.principal";
   public static final String MASTER_RETRY_COUNT = "tachyon.master.retry";
-  public static final String MASTER_RESOURCE_CPU = "tachyon.master.resource.cpu";
-  public static final String MASTER_RESOURCE_MEM = "tachyon.master.resource.mem";
-
   public static final String MASTER_LINEAGE_CHECKPOINT_CLASS =
       "tachyon.master.lineage.checkpoint.class";
   public static final String MASTER_LINEAGE_CHECKPOINT_INTERVAL_MS =
@@ -248,8 +262,6 @@ public final class Constants {
   public static final String WORKER_KEYTAB_KEY = "tachyon.worker.keytab.file";
   public static final String WORKER_PRINCIPAL_KEY = "tachyon.worker.principal";
   public static final String WORKER_DATA_SERVER = "tachyon.worker.data.server.class";
-  public static final String WORKER_RESOURCE_CPU = "tachyon.worker.resource.cpu";
-  public static final String WORKER_RESOURCE_MEM = "tachyon.worker.resource.mem";
 
   public static final String USER_FAILED_SPACE_REQUEST_LIMITS =
       "tachyon.user.failed.space.request.limits";
