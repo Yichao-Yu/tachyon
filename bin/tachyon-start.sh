@@ -102,7 +102,7 @@ start_master() {
   fi
 
   echo "Starting master @ $MASTER_ADDRESS"
-  (nohup $JAVA -cp $CLASSPATH -Dtachyon.home=$TACHYON_HOME -Dtachyon.logs.dir=$TACHYON_LOGS_DIR -Dtachyon.logger.type="MASTER_LOGGER" -Dtachyon.accesslogger.type="MASTER_ACCESS_LOGGER" -Dlog4j.configuration=file:$TACHYON_CONF_DIR/log4j.properties $TACHYON_MASTER_JAVA_OPTS tachyon.master.TachyonMaster > $TACHYON_LOGS_DIR/master.out 2>&1) &
+  (nohup $JAVA -cp $CLASSPATH -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -Dtachyon.home=$TACHYON_HOME -Dtachyon.logs.dir=$TACHYON_LOGS_DIR -Dtachyon.logger.type="MASTER_LOGGER" -Dtachyon.accesslogger.type="MASTER_ACCESS_LOGGER" -Dlog4j.configuration=file:$TACHYON_CONF_DIR/log4j.properties $TACHYON_MASTER_JAVA_OPTS tachyon.master.TachyonMaster > $TACHYON_LOGS_DIR/master.out 2>&1) &
 }
 
 start_worker() {
