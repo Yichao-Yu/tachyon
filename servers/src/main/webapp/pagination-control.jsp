@@ -4,7 +4,7 @@
   var currentLimit = initialLimit();
 
   function initialLimit() {
-    return Math.min(nFilePerPage, nTotalFile);
+    return nFilePerPage;
   }
  
   function redirect() {

@@ -246,7 +246,8 @@ public final class WebInterfaceBrowseServlet extends HttpServlet {
     try {
       int offset = Integer.parseInt(request.getParameter("offset"));
       int limit = Integer.parseInt(request.getParameter("limit"));
-      List<UiFileInfo> sub = fileInfos.subList(offset, offset + limit);
+      List<UiFileInfo> sub = fileInfos.subList(offset, Math.min(offset + limit,
+              Integer.valueOf(fileInfos.size())));
       request.setAttribute("fileInfos", sub);
     } catch (NumberFormatException nfe) {
       request.setAttribute("fatalError",
